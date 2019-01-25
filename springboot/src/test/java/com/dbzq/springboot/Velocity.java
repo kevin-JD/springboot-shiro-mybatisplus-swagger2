@@ -32,7 +32,7 @@ public class Velocity {
 		DataSourceConfig dsConfig  = new DataSourceConfig();
 		dsConfig.setDbType(DbType.MYSQL)  // 设置数据库类型
 				.setDriverName("com.mysql.cj.jdbc.Driver")
-				.setUrl("jdbc:mysql://localhost:3306/atcrowdfunding-v?serverTimezone=GMT%2B8")
+				.setUrl("jdbc:mysql://localhost:3306/test?serverTimezone=GMT%2B8")
 				.setUsername("root")
 				.setPassword("root");
 
