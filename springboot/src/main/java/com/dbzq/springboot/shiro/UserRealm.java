@@ -41,7 +41,7 @@ public class UserRealm extends AuthorizingRealm {
 		if(user==null){
 			return null;
 		}
-		String password = user.getUserpswd();
+		String password = user.getPassword();
 		//盐
 		//String salt = user.getSalt();
 		SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(

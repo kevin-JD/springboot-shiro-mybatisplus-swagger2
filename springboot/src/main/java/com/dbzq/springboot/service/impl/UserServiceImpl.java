@@ -4,7 +4,6 @@ import com.dbzq.springboot.entity.User;
 import com.dbzq.springboot.mapper.UserMapper;
 import com.dbzq.springboot.service.UserService;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**

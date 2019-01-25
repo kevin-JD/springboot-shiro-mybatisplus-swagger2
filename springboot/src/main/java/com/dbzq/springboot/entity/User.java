@@ -17,7 +17,7 @@ import java.io.Serializable;
  * @author yuld
  * @since 2019-01-24
  */
-@TableName("t_user")
+@TableName("user")
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class User implements Serializable {
@@ -27,8 +27,7 @@ public class User implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
     private String username;
-    private String loginacct;
-    private String userpswd;
+    private String password;
     private String email;
     private Date createtime;
 

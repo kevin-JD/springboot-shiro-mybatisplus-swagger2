@@ -25,7 +25,7 @@ public class LoginController {
 	public JsonMessage login(User user) {
 		JsonMessage message = new JsonMessage();
 		Subject subject = SecurityUtils.getSubject();
-		UsernamePasswordToken token = new UsernamePasswordToken(user.getLoginacct(),user.getUserpswd());
+		UsernamePasswordToken token = new UsernamePasswordToken(user.getUsername(),user.getPassword());
 		try {
 			//没有异常则登录成功
 			subject.login(token);

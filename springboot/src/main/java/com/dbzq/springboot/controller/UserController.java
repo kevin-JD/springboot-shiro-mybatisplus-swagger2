@@ -121,8 +121,8 @@ public class UserController {
 	private Wrapper<User> getWrapper(User user){
 		Wrapper<User> wrapper = new EntityWrapper<User>();
 		if(!StringUtils.isEmpty(user)){
-			if(!StringUtils.isEmpty(user.getLoginacct())){
-				wrapper.like("loginacct",user.getLoginacct());
+			if(!StringUtils.isEmpty(user.getUsername())){
+				wrapper.like("username",user.getUsername());
 			}
 			if(!StringUtils.isEmpty(user.getEmail())){
 				wrapper.like("email",user.getEmail());
