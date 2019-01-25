@@ -4,17 +4,13 @@ import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.dbzq.springboot.entity.User;
 import com.dbzq.springboot.service.UserService;
-import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.SimpleAuthenticationInfo;
 import org.apache.shiro.authz.AuthorizationInfo;
-import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.apache.shiro.subject.Subject;
-import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
@@ -34,15 +30,15 @@ public class UserRealm extends AuthorizingRealm {
 	@Override
 	protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
 		//得到用户名
-		String loginacct = (String) token.getPrincipal();
+		String username = (String) token.getPrincipal();
 		Wrapper<User> wrapper = new EntityWrapper<User>();
-		wrapper.eq("loginacct", loginacct);
+		wrapper.eq("username", username);
 		User user = userService.selectOne(wrapper);
 		if(user==null){
 			return null;
 		}
 		String password = user.getPassword();
-		//盐
+		//盐,未添加
 		//String salt = user.getSalt();
 		SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(
 				user, password,null, this.getName());

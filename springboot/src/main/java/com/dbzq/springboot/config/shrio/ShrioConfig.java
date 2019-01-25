@@ -6,7 +6,6 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -57,7 +56,7 @@ public class ShrioConfig {
 		map.put("/v2/**", "anon");
 		map.put("/swagger-resources/**", "anon");
 		//拦截所有
-		map.put("/**","anon");
+		map.put("/**","authc");
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
 		return shiroFilterFactoryBean;
 	}
