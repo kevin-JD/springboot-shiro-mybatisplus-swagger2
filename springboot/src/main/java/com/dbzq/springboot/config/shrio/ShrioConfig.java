@@ -51,8 +51,13 @@ public class ShrioConfig {
 		map.put("/logout","logout");
 		//登录请求不拦截
 		map.put("/login","anon");
-		//拦截所有
-		map.put("/**","anon");
+
+		map.put("/swagger-ui.html", "anon");
+		map.put("/webjars/**", "anon");
+		map.put("/v2/**", "anon");
+		map.put("/swagger-resources/**", "anon");
+//		//拦截所有
+		map.put("/**","authc");
 		shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
 		return shiroFilterFactoryBean;
 	}

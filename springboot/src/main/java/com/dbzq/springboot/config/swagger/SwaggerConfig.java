@@ -8,11 +8,13 @@ import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @author yuld
  */
 @Configuration
+@EnableSwagger2
 public class SwaggerConfig {
 	@Bean
 	public Docket createRestApi() {
@@ -26,7 +28,7 @@ public class SwaggerConfig {
 
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
-				.title("springboot整合swagger")
+				.title("接口文档")
 				.description("在此页面做接口测试")
 				.version("1.0.0")
 				.build();

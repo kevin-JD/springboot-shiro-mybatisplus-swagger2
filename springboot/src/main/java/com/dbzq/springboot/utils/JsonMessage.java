@@ -1,35 +1,20 @@
 package com.dbzq.springboot.utils;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+import java.util.Date;
+
 /**
  * @author yuld
  */
+@Data
+@EqualsAndHashCode(callSuper = false)
 public class JsonMessage {
 
+	private Date time = new Date();
 	private boolean success;
-	private String info;
 	private Object data;
 
-	public boolean isSuccess() {
-		return success;
-	}
 
-	public void setSuccess(boolean success) {
-		this.success = success;
-	}
-
-	public String getInfo() {
-		return info;
-	}
-
-	public void setInfo(String info) {
-		this.info = info;
-	}
-
-	public Object getData() {
-		return data;
-	}
-
-	public void setData(Object data) {
-		this.data = data;
-	}
 }

@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 /**
  * @author yuld
  */
-@Configuration
+//@Configuration
 public class MvcConfig extends WebMvcConfigurationSupport {
 
 
